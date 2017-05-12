@@ -1382,7 +1382,7 @@
 /* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\nvar React = __webpack_require__(8);\nvar Nav = __webpack_require__(224);\n\nvar Main = function Main(props) {\n  return React.createElement(\n    'div',\n    null,\n    React.createElement(Nav, null),\n    React.createElement(\n      'h1',\n      null,\n      'Main application'\n    ),\n    props.children\n  );\n};\n\nmodule.exports = Main;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/Main.jsx\n// module id = 223\n// module chunks = 0\n//# sourceURL=webpack:///./app/components/Main.jsx?");
+	eval("'use strict';\n\nvar React = __webpack_require__(8);\nvar Nav = __webpack_require__(224);\n\nvar Main = function Main(props) {\n  return React.createElement(\n    'div',\n    null,\n    React.createElement(Nav, null),\n    React.createElement(\n      'div',\n      { className: 'row' },\n      React.createElement(\n        'div',\n        { className: 'column medium-8 large-6 small-centered' },\n        props.children\n      )\n    )\n  );\n};\n\nmodule.exports = Main;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/Main.jsx\n// module id = 223\n// module chunks = 0\n//# sourceURL=webpack:///./app/components/Main.jsx?");
 
 /***/ }),
 /* 224 */
@@ -1592,13 +1592,13 @@
 /* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\nvar React = __webpack_require__(8);\n\nvar About = function About() {\n  return React.createElement(\n    'h2',\n    null,\n    'About component'\n  );\n};\n\nmodule.exports = About;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/About.jsx\n// module id = 258\n// module chunks = 0\n//# sourceURL=webpack:///./app/components/About.jsx?");
+	eval("\"use strict\";\n\nvar React = __webpack_require__(8);\n\nvar About = function About() {\n  return React.createElement(\n    \"div\",\n    null,\n    React.createElement(\n      \"h2\",\n      { className: \"text-center\" },\n      \"About component\"\n    ),\n    React.createElement(\n      \"p\",\n      null,\n      \"This is about page\"\n    )\n  );\n};\n\nmodule.exports = About;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/About.jsx\n// module id = 258\n// module chunks = 0\n//# sourceURL=webpack:///./app/components/About.jsx?");
 
 /***/ }),
 /* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\nvar React = __webpack_require__(8);\n\nvar Examples = function Examples() {\n  return React.createElement(\n    'div',\n    null,\n    React.createElement(\n      'h2',\n      null,\n      'Examples component'\n    ),\n    React.createElement(\n      'p',\n      null,\n      'This is examples page'\n    )\n  );\n};\n\nmodule.exports = Examples;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/Examples.jsx\n// module id = 259\n// module chunks = 0\n//# sourceURL=webpack:///./app/components/Examples.jsx?");
+	eval("'use strict';\n\nvar React = __webpack_require__(8);\n\nvar _require = __webpack_require__(166),\n    Link = _require.Link;\n\nvar Examples = function Examples() {\n  return React.createElement(\n    'div',\n    null,\n    React.createElement(\n      'h2',\n      { className: 'text-center' },\n      'Examples'\n    ),\n    React.createElement(\n      'p',\n      null,\n      'This is examples page'\n    ),\n    React.createElement(\n      'ol',\n      null,\n      React.createElement(\n        'li',\n        null,\n        React.createElement(\n          Link,\n          { to: '/?q=london' },\n          'London, UK'\n        )\n      ),\n      React.createElement(\n        'li',\n        null,\n        React.createElement(\n          Link,\n          { to: '/?q=philadelphia' },\n          'Philadelphia, USA'\n        )\n      )\n    )\n  );\n};\n\nmodule.exports = Examples;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/Examples.jsx\n// module id = 259\n// module chunks = 0\n//# sourceURL=webpack:///./app/components/Examples.jsx?");
 
 /***/ }),
 /* 260 */

@@ -1,9 +1,10 @@
 {
-  "name": "react-project",
+  "name": "reactproject",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "test server",
     "start": "node server.js"
   },
   "author": "",

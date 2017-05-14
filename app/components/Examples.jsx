@@ -7,10 +7,10 @@ let Examples = () =>
     <p>This is examples page</p>
     <ol>
       <li>
-        <Link to="/?q=london">London, UK</Link>
+        <Link to="/?location=London">London, UK</Link>
       </li>
       <li>
-        <Link to="/?q=philadelphia">Philadelphia, USA</Link>
+        <Link to="/?location=Philadelphia">Philadelphia, USA</Link>
       </li>
     </ol>
   </div>

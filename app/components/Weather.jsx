@@ -25,12 +25,31 @@ let Weather = React.createClass({
         temp,
         isLoading: false
       })
-    }, () => {
+    })
+    .catch( () => {
       this.setState({
         isLoading: false,
         errorMessage: true
       });
     })
+  },
+
+  componentDidMount() {
+    let location = this.props.location.query.location;
+
+    if (location && location.length > 0) {
+      this.handleSearch(location);
+      window.location.hash = '#/';
+    }
+  },
+
+  componentWillReceiveProps(newProps) {
+    let location = newProps.location.query.location;
+
+    if (location && location.length > 0) {
+      this.handleSearch(location);
+      window.location.hash = '#/';
+    }
   },
 
   render() {
@@ -45,7 +64,7 @@ let Weather = React.createClass({
     function renderError() {
       if (errorMessage) {
         return (
-          <ErrorModal message='Город не найден'/>
+          <ErrorModal message="City wasn't found"/>
         )
       }
     }

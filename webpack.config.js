@@ -27,6 +27,7 @@ module.exports = {
       Weather: 'app/components/Weather.jsx',
       WeatherForm: 'app/components/WeatherForm.jsx',
       WeatherResult: 'app/components/WeatherResult.jsx',
+      ErrorModal: 'app/components/ErrorModal.jsx',
       About: 'app/components/About.jsx',
       Examples: 'app/components/Examples.jsx',
       getWeatherMap: 'app/api/getWeatherMap.jsx',
@@ -45,5 +46,5 @@ module.exports = {
       }
     ]
   },
-  devtool: 'cheap-module-eval-soerce-map'
+  devtool: 'inline-source-map'
 }

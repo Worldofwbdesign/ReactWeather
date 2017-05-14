@@ -1,7 +1,8 @@
 let React = require('react'),
     WeatherForm = require('WeatherForm'),
     WeatherResult = require('WeatherResult'),
-    getWeatherMap = require('getWeatherMap');
+    getWeatherMap = require('getWeatherMap'),
+    ErrorModal = require('ErrorModal');
 
 
 let Weather = React.createClass({
@@ -13,7 +14,10 @@ let Weather = React.createClass({
   },
 
   handleSearch(location) {
-    this.setState({isLoading: true});
+    this.setState({
+      isLoading: true,
+      errorMessage: false
+    });
 
     getWeatherMap.getTemp(location).then( (temp) => {
       this.setState({
@@ -22,18 +26,27 @@ let Weather = React.createClass({
         isLoading: false
       })
     }, () => {
-      throw new Error('Something is wrong');
-      this.setState({isLoading: false});
+      this.setState({
+        isLoading: false,
+        errorMessage: true
+      });
     })
   },
 
   render() {
-    let { isLoading, location, temp } = this.state;
+    let { isLoading, location, temp, errorMessage } = this.state;
     function renderMessage() {
       if (isLoading) {
         return <h3 className="text-center">Loading weather...</h3>
       } else if (location && temp) {
         return <WeatherResult location={location} temp={temp}/>
+      }
+    }
+    function renderError() {
+      if (errorMessage) {
+        return (
+          <ErrorModal message='Город не найден'/>
+        )
       }
     }
 
@@ -42,6 +55,7 @@ let Weather = React.createClass({
         <h1 className="text-center">Get Weather</h1>
         <WeatherForm onSearch={this.handleSearch}/>
         { renderMessage() }
+        { renderError() }
       </div>
     )
   }
